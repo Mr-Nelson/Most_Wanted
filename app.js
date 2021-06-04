@@ -20,3 +20,53 @@ function searchByName(){
         console.log('Sorry, looks like there is no one with that name.');
     }
 }
+
+people.map(function(el)){
+    document.getElementById("people").innerHTML += `<tr>
+    <td>${el.firstName}</td>
+    <td>${el.lastName}</td>
+    <td>${el.gender}</td>
+    <td>${el.dob}</td>
+    <td>${el.height}</td>
+    <td>${el.weight}</td>
+    <td>${el.eyeColor}</td>
+    <td>${el.occupation}</td>
+    <td>${el.parents}</td>
+    <td>${el.currentSpouse}</td>
+    </tr>`
+}
+
+function filterPeople(){
+    people.filter(function(el)){
+        document.getElementById("people").innerHTML == `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <td>${el.gender}</td>
+        <td>${el.dob}</td>
+        <td>${el.height}</td>
+        <td>${el.weight}</td>
+        <td>${el.eyeColor}</td>
+        <td>${el.occupation}</td>
+        <td>${el.parents}</td>
+        <td>${el.currentSpouse}</td>
+        </tr>`
+    }
+}
+function descendants(){
+    people.filter(function(el)){
+        document.getElementById("people").innerHTML == `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        </tr>`
+    }
+}
+function immediateFamily(){
+    people.filter(function(el)){
+        document.getElementById("people").innerHTML == `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <td>${el.parents}</td>
+        <td>${el.currentSpouse}</td>
+        </tr>`
+    }
+}
