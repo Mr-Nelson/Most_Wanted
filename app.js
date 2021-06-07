@@ -21,7 +21,7 @@
 //     }
 // }
 
-let userInput= correctUserInput(prompt("Enter string here."));
+// let userInput= correctUserInput(prompt("Enter string here."));
 
 function correctUserInput(string){
     let correctedInput =[];
@@ -37,54 +37,76 @@ function correctUserInput(string){
         }
     return correctedInput;
 }
-console.log(userInput);
+// console.log("test", userInput);
 
-// people.map(function(el)){
-//     document.getElementById("people").innerHTML += `<tr>
-//     <td>${el.firstName}</td>
-//     <td>${el.lastName}</td>
-//     <td>${el.gender}</td>
-//     <td>${el.dob}</td>
-//     <td>${el.height}</td>
-//     <td>${el.weight}</td>
-//     <td>${el.eyeColor}</td>
-//     <td>${el.occupation}</td>
-//     <td>${el.parents}</td>
-//     <td>${el.currentSpouse}</td>
-//     </tr>`
-// }
+people.map(function(el)){
+    document.getElementById("people").innerHTML += `<tr>
+    <td>${el.firstName}</td>
+    <td>${el.lastName}</td>
+    <td>${el.gender}</td>
+    <td>${el.dob}</td>
+    <td>${el.height}</td>
+    <td>${el.weight}</td>
+    <td>${el.eyeColor}</td>
+    <td>${el.occupation}</td>
+    <td>${el.parents}</td>
+    <td>${el.currentSpouse}</td>
+    </tr>`
+}
 
-// function filterPeople(){
-//     people.filter(function(el)){
-//         document.getElementById("people").innerHTML == `<tr>
-//         <td>${el.firstName}</td>
-//         <td>${el.lastName}</td>
-//         <td>${el.gender}</td>
-//         <td>${el.dob}</td>
-//         <td>${el.height}</td>
-//         <td>${el.weight}</td>
-//         <td>${el.eyeColor}</td>
-//         <td>${el.occupation}</td>
-//         <td>${el.parents}</td>
-//         <td>${el.currentSpouse}</td>
-//         </tr>`
-//     }
-// }
-// function descendants(){
-//     people.filter(function(el)){
-//         document.getElementById("people").innerHTML == `<tr>
-//         <td>${el.firstName}</td>
-//         <td>${el.lastName}</td>
-//         </tr>`
-//     }
-// }
-// function immediateFamily(){
-//     people.filter(function(el)){
-//         document.getElementById("people").innerHTML == `<tr>
-//         <td>${el.firstName}</td>
-//         <td>${el.lastName}</td>
-//         <td>${el.parents}</td>
-//         <td>${el.currentSpouse}</td>
-//         </tr>`
-//     }
-// }
+function filterPeople(userFormInputs){
+    people.filter(function(el)){
+        document.getElementById("people").innerHTML == `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <td>${el.gender}</td>
+        <td>${el.dob}</td>
+        <td>${el.height}</td>
+        <td>${el.weight}</td>
+        <td>${el.eyeColor}</td>
+        <td>${el.occupation}</td>
+        <td>${el.parents}</td>
+        <td>${el.currentSpouse}</td>
+        </tr>`
+    }
+    descendantsButton(){
+        if () == true{
+            function filterPeople(userFormInputs.id == people.parents){
+                people.filter(function(el)){
+                    document.getElementById("people").innerHTML == `<tr>
+                    <td>${el.firstName}</td>
+                    <td>${el.lastName}</td>
+                    <td>${el.gender}</td>
+                    <td>${el.dob}</td>
+                    <td>${el.height}</td>
+                    <td>${el.weight}</td>
+                    <td>${el.eyeColor}</td>
+                    <td>${el.occupation}</td>
+                    <td>${el.parents}</td>
+                    <td>${el.currentSpouse}</td>
+                    </tr>`
+                }
+            }
+        }
+    }
+    immediateFamilyButton(){
+        if () == true{
+            function filterPeople(userFormInputs.parents, userFormInputs.currentSpouse,userFormInputs.id == people.parents, userFormInputs.parents == people.parents){
+                people.filter(function(el)){
+                    document.getElementById("people").innerHTML == `<tr>
+                    <td>${el.firstName}</td>
+                    <td>${el.lastName}</td>
+                    <td>${el.gender}</td>
+                    <td>${el.dob}</td>
+                    <td>${el.height}</td>
+                    <td>${el.weight}</td>
+                    <td>${el.eyeColor}</td>
+                    <td>${el.occupation}</td>
+                    <td>${el.parents}</td>
+                    <td>${el.currentSpouse}</td>
+                    </tr>`
+                }
+            }
+        }
+    }
+}
