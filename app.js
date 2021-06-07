@@ -22,7 +22,16 @@
 // }
 
 // let userInput= correctUserInput(prompt("Enter string here."));
-
+let userFormInputs = correctUserInput(
+    document.forms["form"]["fname"].value,
+    document.forms["form"]["lname"].value,
+    document.forms["form"]["gender"].value,
+    document.forms["form"]["dob"].value,
+    document.forms["form"]["height"].value,
+    document.forms["form"]["weight"].value,
+    document.forms["form"]["eyeColor"].value,
+    document.forms["form"]["occupation"].value
+)
 function correctUserInput(string){
     let correctedInput =[];
         for (let i = 0; i < string.length; i++){
@@ -55,6 +64,7 @@ people.map(function(el)){
 }
 
 function filterPeople(userFormInputs){
+    if (userFormInputs == people.(string))
     people.filter(function(el)){
         document.getElementById("people").innerHTML == `<tr>
         <td>${el.firstName}</td>
@@ -96,12 +106,6 @@ function filterPeople(userFormInputs){
                     document.getElementById("people").innerHTML == `<tr>
                     <td>${el.firstName}</td>
                     <td>${el.lastName}</td>
-                    <td>${el.gender}</td>
-                    <td>${el.dob}</td>
-                    <td>${el.height}</td>
-                    <td>${el.weight}</td>
-                    <td>${el.eyeColor}</td>
-                    <td>${el.occupation}</td>
                     <td>${el.parents}</td>
                     <td>${el.currentSpouse}</td>
                     </tr>`
