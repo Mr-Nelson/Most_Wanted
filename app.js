@@ -56,8 +56,8 @@ function buildTable(){
 }
 
 
-function filterPeople(userFormInputs){
-    let userFormInputs = {
+function filterPeople(string){
+    let userFormInputs = [
         document.forms["form"]["fname"].value,
         document.forms["form"]["lname"].value,
         document.forms["form"]["gender"].value,
@@ -66,22 +66,21 @@ function filterPeople(userFormInputs){
         document.forms["form"]["weight"].value,
         document.forms["form"]["eyeColor"].value,
         document.forms["form"]["occupation"].value
-    }
-        people.filter(function(el){
-            document.getElementById("people").innerHTML == `<tr>
-            <td>${el.firstName}</td>
-            <td>${el.lastName}</td>
-            <td>${el.gender}</td>
-            <td>${el.dob}</td>
-            <td>${el.height}</td>
-            <td>${el.weight}</td>
-            <td>${el.eyeColor}</td>
-            <td>${el.occupation}</td>
-            <td>${el.parents}</td>
-            <td>${el.currentSpouse}</td>
-            </tr>`
+    ]
+        people.filter(function(userFormInputs){
             if (userFormInputs == people.el){
-                return buildTable(userFormInputs);
+                document.getElementById("people").innerHTML == `<tr>
+                <td>${el.firstName}</td>
+                <td>${el.lastName}</td>
+                <td>${el.gender}</td>
+                <td>${el.dob}</td>
+                <td>${el.height}</td>
+                <td>${el.weight}</td>
+                <td>${el.eyeColor}</td>
+                <td>${el.occupation}</td>
+                <td>${el.parents}</td>
+                <td>${el.currentSpouse}</td>
+                </tr>`
             }
         })
 }
