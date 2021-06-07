@@ -21,17 +21,7 @@
 //     }
 // }
 
-// let userInput= correctUserInput(prompt("Enter string here."));
-// let userFormInputs = correctUserInput(
-//     document.forms["form"]["fname"].value,
-//     document.forms["form"]["lname"].value,
-//     document.forms["form"]["gender"].value,
-//     document.forms["form"]["dob"].value,
-//     document.forms["form"]["height"].value,
-//     document.forms["form"]["weight"].value,
-//     document.forms["form"]["eyeColor"].value,
-//     document.forms["form"]["occupation"].value
-// )
+
 // function correctUserInput(string){
 //     let correctedInput =[];
 //         for (let i = 0; i < string.length; i++){
@@ -46,7 +36,7 @@
 //         }
 //     return correctedInput;
 // }
-// console.log("test", userInput);
+
 
 function buildTable(){
     people.map(function(el) {
@@ -66,26 +56,35 @@ function buildTable(){
 }
 
 
-// Create a function that can be called on click
-// Inside of this function we should map over each person in the "people" data
-// Append a row to our table in the HTML file for each person
-
-// function filterPeople(userFormInputs){
-//     if (userFormInputs == people.(string))
-//     people.filter(function(el){
-//         document.getElementById("people").innerHTML == `<tr>
-//         <td>${el.firstName}</td>
-//         <td>${el.lastName}</td>
-//         <td>${el.gender}</td>
-//         <td>${el.dob}</td>
-//         <td>${el.height}</td>
-//         <td>${el.weight}</td>
-//         <td>${el.eyeColor}</td>
-//         <td>${el.occupation}</td>
-//         <td>${el.parents}</td>
-//         <td>${el.currentSpouse}</td>
-//         </tr>`
-//     })
+function filterPeople(userFormInputs){
+    let userFormInputs = {
+        document.forms["form"]["fname"].value,
+        document.forms["form"]["lname"].value,
+        document.forms["form"]["gender"].value,
+        document.forms["form"]["dob"].value,
+        document.forms["form"]["height"].value,
+        document.forms["form"]["weight"].value,
+        document.forms["form"]["eyeColor"].value,
+        document.forms["form"]["occupation"].value
+    }
+        people.filter(function(el){
+            document.getElementById("people").innerHTML == `<tr>
+            <td>${el.firstName}</td>
+            <td>${el.lastName}</td>
+            <td>${el.gender}</td>
+            <td>${el.dob}</td>
+            <td>${el.height}</td>
+            <td>${el.weight}</td>
+            <td>${el.eyeColor}</td>
+            <td>${el.occupation}</td>
+            <td>${el.parents}</td>
+            <td>${el.currentSpouse}</td>
+            </tr>`
+            if (userFormInputs == people.el){
+                return buildTable(userFormInputs);
+            }
+        })
+}
 //     filterPeople(userFormInputs.id == people.parents);
 //          if (true)
 //              filterPeople(people.parents == people.id)
@@ -156,13 +155,6 @@ function buildTable(){
 //      }
 //  }
 //}
-
-
-// function davidsFunction(){
-    //alert('David has sunburn');
-//}
-
-console.log("test")
 
 
 
