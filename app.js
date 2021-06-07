@@ -62,7 +62,7 @@ function buildTable(){
         <td>${el.parents}</td>
         <td>${el.currentSpouse}</td>
         </tr>`
-    }
+    })
 }
 
 
@@ -124,6 +124,6 @@ function buildTable(){
 // }
 
 
-function davidsFunction(){
-    alert('David has sunburn');
-}
+// function davidsFunction(){
+    //alert('David has sunburn');
+//}

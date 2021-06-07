@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>devCodeCamp &middot; Most Wanted</title>
+    <title>Most Wanted</title>
   </head>
   <body>
-    <p>Use any Field to search for someone. Then Click Submit.</p>
+    <p>Use any Field to Search for someone. Then Click Submit.</p>
     <form id="nameForm">
       
       <label for="idn">ID Number:</label><br>
@@ -24,12 +24,37 @@
       <input type="text" id="height" name="height" value=""><br><br>
 
       </form>
+      <br>
+
+
+
+      <button onclick= "buildTable()">"devCodeCamp Most Wanted"</button>
+
+
+      <br>
+
+      <table>
+          <thead>
+              <th>First Name</th> 
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>dob</th> 
+              <th>height</th>
+              <th>weight</th>
+              <th>eyeColor</th>
+              <th>occupation</th>
+          </thead>
+      <tbody id= "people"> 
+
+      </tbody>
 
 
 
 
-      <button onclick="davidsFunction()">Title Of Davids Button</button>
+      </table>
 
+
+      <br>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
