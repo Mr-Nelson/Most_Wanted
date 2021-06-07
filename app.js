@@ -162,7 +162,7 @@ function buildTable(){
     //alert('David has sunburn');
 //}
 
-
+console.log("test")
 
 
 
