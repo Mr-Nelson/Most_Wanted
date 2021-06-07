@@ -5,44 +5,60 @@
     <title>Most Wanted</title>
   </head>
   <body>
-    <p>Use any Field to Search for someone. Then Click Submit.</p>
-    <form id="nameForm">
+    <p>Enter .</p>
+
+    <form id="form">
       
-      <label for="idn">ID Number:</label><br>
-      <input type="number" id="idn" name="idn" value ="">
+      <form action ="">
 
-      <label for="fname">First name:</label>
-      <input type="text" id="fname" name="fname" value =""><br>
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" value =""><br>
 
-      <label for="gender">Gender:</label><br>
-      <input type="text" id="gender" name="gender" value=""><br>
+        <label for="fname">Last Name:</label>
+        <input type="text" id="lname" name="lname" value =""><br>
 
-      <label for="eyeColor">Eye color:</label><br>
-      <input type="text" id="eyeColor" name="eyeColor" value =""><br>
+        <label for="gender">Gender:</label><br>
+        <input type="text" id="gender" name="gender" value=""><br>
 
-      <label for="height">Height:</label><br>
-      <input type="text" id="height" name="height" value=""><br><br>
+        <label for="dob">dob:</label><br>
+        <input type="text" id="dob" name="dob" value=""><br>
+
+        <label for="height">Height:</label><br>
+        <input type="text" id="height" name="height" value=""><br>
+
+        <label for="height">Weight:</label><br>
+        <input type="text" id="weight" name="weight" value=""><br>
+
+        <label for="eyeColor">Eye color:</label><br>
+        <input type="text" id="eyeColor" name="eyeColor" value =""><br>
+
+        <label for="occupation">Occupation:</label><br>
+        <input type="text" id="occupation" name="occupation" value=""><br>
+
+        <input type="submit" value = "submit">
 
       </form>
+     
+    </form>
       <br>
 
 
-
-      <button onclick= "buildTable()">"devCodeCamp Most Wanted"</button>
+     
 
 
       <br>
 
       <table>
+        <buildTable()> 
           <thead>
               <th>First Name</th> 
               <th>Last Name</th>
               <th>Gender</th>
-              <th>dob</th> 
-              <th>height</th>
-              <th>weight</th>
-              <th>eyeColor</th>
-              <th>occupation</th>
+              <th>Date of Birth</th> 
+              <th>Height</th>
+              <th>Weight</th>
+              <th>Eye Color</th>
+              <th>Occupation</th>
           </thead>
       <tbody id= "people"> 
 
@@ -50,9 +66,9 @@
 
 
 
-
+    </buildTable>
       </table>
-
+    
 
       <br>
     <script src="data.js"></script>
