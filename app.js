@@ -71,9 +71,8 @@ function buildTable(){
 // Append a row to our table in the HTML file for each person
 
 // function filterPeople(userFormInputs){
-//     filterPeople();
 //     if (userFormInputs == people.(string))
-//     people.filter(function(el)){
+//     people.filter(function(el){
 //         document.getElementById("people").innerHTML == `<tr>
 //         <td>${el.firstName}</td>
 //         <td>${el.lastName}</td>
@@ -86,12 +85,26 @@ function buildTable(){
 //         <td>${el.parents}</td>
 //         <td>${el.currentSpouse}</td>
 //         </tr>`
-//     }
-//     descendantsButton(){
-//         if ( == true) {
-//             function filterPeople(userFormInputs.id == people.parents){
-//                 people.filter(function(el)){
-//                     document.getElementById("people").innerHTML == `<tr>
+//     })
+//     filterPeople(userFormInputs.id == people.parents);
+//          if (true)
+//              filterPeople(people.parents == people.id)
+//                  if (true){
+//                      document.getElementById("people").innerHTML == `<tr>
+//                          <td>${el.firstName}</td>
+//                          <td>${el.lastName}</td>
+//                          <td>${el.gender}</td>
+//                          <td>${el.dob}</td>
+//                          <td>${el.height}</td>
+//                          <td>${el.weight}</td>
+//                          <td>${el.eyeColor}</td>
+//                          <td>${el.occupation}</td>
+//                          <td>${el.parents}</td>
+//                          <td>${el.currentSpouse}</td>
+//                          </tr>`
+//                          }
+//          else if (true){
+//              document.getElementById("people").innerHTML == `<tr>
 //                     <td>${el.firstName}</td>
 //                     <td>${el.lastName}</td>
 //                     <td>${el.gender}</td>
@@ -103,25 +116,46 @@ function buildTable(){
 //                     <td>${el.parents}</td>
 //                     <td>${el.currentSpouse}</td>
 //                     </tr>`
-//                 }
-//             }
-//         }
-//     }
-//     immediateFamilyButton(){
-//         if () == true{
-//             function filterPeople(userFormInputs.parents, userFormInputs.currentSpouse,userFormInputs.id == people.parents, userFormInputs.parents == people.parents){
-//                 people.filter(function(el)){
-//                     document.getElementById("people").innerHTML == `<tr>
-//                     <td>${el.firstName}</td>
-//                     <td>${el.lastName}</td>
-//                     <td>${el.parents}</td>
-//                     <td>${el.currentSpouse}</td>
-//                     </tr>`
-//                 }
-//             }
-//         }
-//     }
+//                     }
 // }
+// 
+//descendantsButton(){
+//  if ( == true) {
+//    function filterPeople(userFormInputs.id == people.parents){
+//      people.filter(function(el){
+//          document.getElementById("people").innerHTML == `<tr>
+//          <td>${el.firstName}</td>
+//          <td>${el.lastName}</td>
+//          <td>${el.gender}</td>
+//          <td>${el.dob}</td>
+//          <td>${el.height}</td>
+//          <td>${el.weight}</td>
+//          <td>${el.eyeColor}</td>
+//          <td>${el.occupation}</td>
+//          <td>${el.parents}</td>
+//          <td>${el.currentSpouse}</td>
+//          </tr>`
+//          })
+//       }
+//     }
+//  }
+// 
+// 
+//immediateFamilyButton(){
+//  if () == true{
+//      function filterPeople(userFormInputs.parents, userFormInputs.currentSpouse,userFormInputs.id == people.parents, userFormInputs.parents == people.parents){
+//          people.filter(function(el)){
+//              document.getElementById("people").innerHTML == `<tr>
+//              <td>${el.firstName}</td>
+//              <td>${el.lastName}</td>
+//              <td>${el.parents}</td>
+//              <td>${el.currentSpouse}</td>
+//              </tr>`
+//              })
+//           }
+//      }
+//  }
+//}
 
 
 // function davidsFunction(){
