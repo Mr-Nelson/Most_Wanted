@@ -52,7 +52,11 @@ function buildTable(){
         </tr>`
     })
 }
-
+function resetTable() {
+    people.map(function(el){
+        document.getElementById("results").innerHTML = "";
+  })
+}  
 // let results = people;
 // results = searchByEyeColor('blue', results)
 // results = searchByGender('male', results)

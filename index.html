@@ -6,22 +6,22 @@
   </head>
   <body>
     <body onpageshow= "buildTable()">
-    <table id="master">
+    <table id="master" width= "100%">
       <thead>devCodeCamp's Most Wanted
-          <th>First Name</th> 
-          <th>Last Name</th>
-          <th>Gender</th>
-          <th>Date of Birth</th> 
-          <th>Height</th>
-          <th>Weight</th>
-          <th>Eye Color</th>
-          <th>Occupation</th>
+        <th>First Name</th> 
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Date of Birth</th> 
+        <th>Height</th>
+        <th>Weight</th>
+        <th>Eye Color</th>
+        <th>Occupation</th>
       </thead>
-  <tbody id= "people"> 
+      <tbody id= "people"> 
 
-  </tbody>
+      </tbody>
 
-  </table>
+    </table>
 
     <p>Please Enter:</p>
 
@@ -36,7 +36,7 @@
         <label for="gender">Gender:</label><br>
         <input type="text" id="gender" name="gender" value=""><br>
 
-        <label for="dob">dob:</label><br>
+        <label for="dob">Date Of Birth:</label><br>
         <input type="text" id="dob" name="dob" value=""><br>
 
         <label for="height">Height:</label><br>
@@ -53,12 +53,11 @@
 
         <button type="button" onclick="filterPeople()">Search Results</button>
 
-      </form>
+    </form>
      
     </form>
-      <br>
-    <table id="result">
-      <thead>
+      <table id="result" width="100%">
+        <thead>Your Search Results
           <th>First Name</th> 
           <th>Last Name</th>
           <th>Gender</th>
@@ -67,16 +66,14 @@
           <th>Weight</th>
           <th>Eye Color</th>
           <th>Occupation</th>
-      </thead>
-  <tbody id= "results"> 
-
-  </tbody>
-
-  </table>
-
-
-
-      <br>
+        </thead>
+        <tbody id= "results"> 
+        </tbody>
+      </table>
+      <button onclick="resetTable()">Reset Table</button>
+  
+    </form>
+    <br>
     <script src="data.js"></script>
     <script src="app.js"></script>
   </body>
