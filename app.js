@@ -55,35 +55,192 @@ function buildTable(){
     })
 }
 
+// let results = people;
+// results = searchByEyeColor('blue', results)
+// results = searchByGender('male', results)
+// console.log(results)
 
-function filterPeople(string){
-    let userFormInputs = [
-        document.forms["form"]["fname"].value,
-        document.forms["form"]["lname"].value,
-        document.forms["form"]["gender"].value,
-        document.forms["form"]["dob"].value,
-        document.forms["form"]["height"].value,
-        document.forms["form"]["weight"].value,
-        document.forms["form"]["eyeColor"].value,
-        document.forms["form"]["occupation"].value
-    ]
-        people.filter(function(userFormInputs){
-            if (userFormInputs == people.el){
-                document.getElementById("people").innerHTML == `<tr>
-                <td>${el.firstName}</td>
-                <td>${el.lastName}</td>
-                <td>${el.gender}</td>
-                <td>${el.dob}</td>
-                <td>${el.height}</td>
-                <td>${el.weight}</td>
-                <td>${el.eyeColor}</td>
-                <td>${el.occupation}</td>
-                <td>${el.parents}</td>
-                <td>${el.currentSpouse}</td>
-                </tr>`
-            }
-        })
+
+
+// function searchByGender(gender, peopleToSearch){
+//     let filteredPeople = peopleToSearch.filter(function(person){
+//         if(banana.gender == gender){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     })
+//     return filteredPeople
+// }
+
+
+
+function filterPeople (){
+    let userFormInputs = [  //[Joy,"","","","","","",""]
+    document.forms["form"]["fname"].value,
+    document.forms["form"]["lname"].value,
+    document.forms["form"]["gender"].value,
+    document.forms["form"]["dob"].value,
+    document.forms["form"]["height"].value,
+    document.forms["form"]["weight"].value,
+    document.forms["form"]["eyeColor"].value,
+    document.forms["form"]["occupation"].value
+]
+    let results = people;
+
+
+    if(userFormInputs[0] != ""){
+        results = searchByFirstName(userFormInputs[0], results)
+    }
+    if(userFormInputs[1] != ""){
+        results = searchByLastName(userFormInputs[1], results)
+    }
+    if(userFormInputs[2] != ""){
+        results = searchByGender(userFormInputs[2], results)
+    }
+    if(userFormInputs[3] != ""){
+        results = searchByDOB(userFormInputs[3], results)
+    }
+    if(userFormInputs[4] != ""){
+        results = searchByHeight(userFormInputs[4], results)
+    }
+    if(userFormInputs[5] != ""){
+        results = searchByWeight(userFormInputs[5], results)
+    }
+    if(userFormInputs[6] != ""){
+        results = searchByEyeColor(userFormInputs[6], results)
+    }
+    if(userFormInputs[7] != ""){
+        results = searchByOccupation(userFormInputs[7], results)
+    }
+    results.map(function(el) {
+        document.getElementById("people").innerHTML += `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <td>${el.gender}</td>
+        <td>${el.dob}</td>
+        <td>${el.height}</td>
+        <td>${el.weight}</td>
+        <td>${el.eyeColor}</td>
+        <td>${el.occupation}</td>
+        </tr>`
+    })
 }
+
+function searchByFirstName(firstName, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.firstName == firstName){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+function searchByLastName(lastName, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.lastName ==lastName){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+function searchByGender(gender, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.gender == gender){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+function searchByDOB(dob, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.dob == dob){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}    
+function searchByHeight(height, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.height == height){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+function searchByWeight(weight, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.weight == weight){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+function searchByEyeColor(eyeColor, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.eyeColor == eyeColor){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+function searchByOccupation(occupation, results){
+    let filteredPeople = results.filter(function(person){
+        if(person.occupation == occupation){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople
+}
+    
+
+
+
+//     let peopleSearch = people.filter(function(characteristic){     //[Joy,"","","","","","",""]
+//         if (userFormInputs[0] === characteristic.firstName || userFor == people.lastName || people.gender || people.dob || people.height || people.weight || people.eyeColor || people.occupation){  //BOOM
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     document.getElementById("people").innerHTML == `<tr>
+//         <td>${el.firstName}</td>
+//         <td>${el.lastName}</td>
+//         <td>${el.gender}</td>
+//         <td>${el.dob}</td>
+//         <td>${el.height}</td>
+//         <td>${el.weight}</td>
+//         <td>${el.eyeColor}</td>
+//         <td>${el.occupation}</td>
+//         <td>${el.parents}</td>
+//         <td>${el.currentSpouse}</td>
+//         </tr>`;
+//     })
+// }
 //     filterPeople(userFormInputs.id == people.parents);
 //          if (true)
 //              filterPeople(people.parents == people.id)
