@@ -40,7 +40,7 @@
 
 function buildTable(){
     people.map(function(el) {
-        document.getElementById("people").innerHTML += `<tr>
+        document.getElementById("master").innerHTML += `<tr>
         <td>${el.firstName}</td>
         <td>${el.lastName}</td>
         <td>${el.gender}</td>
@@ -49,8 +49,6 @@ function buildTable(){
         <td>${el.weight}</td>
         <td>${el.eyeColor}</td>
         <td>${el.occupation}</td>
-        <td>${el.parents}</td>
-        <td>${el.currentSpouse}</td>
         </tr>`
     })
 }
@@ -115,7 +113,7 @@ function filterPeople (){
         results = searchByOccupation(userFormInputs[7], results)
     }
     results.map(function(el) {
-        document.getElementById("people").innerHTML += `<tr>
+        document.getElementById("results").innerHTML += `<tr>
         <td>${el.firstName}</td>
         <td>${el.lastName}</td>
         <td>${el.gender}</td>

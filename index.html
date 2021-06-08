@@ -5,7 +5,25 @@
     <title>Most Wanted</title>
   </head>
   <body>
-    <p>Enter</p>
+    <body onpageshow= "buildTable()">
+    <table id="master">
+      <thead>devCodeCamp's Most Wanted
+          <th>First Name</th> 
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th> 
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Eye Color</th>
+          <th>Occupation</th>
+      </thead>
+  <tbody id= "people"> 
+
+  </tbody>
+
+  </table>
+
+    <p>Please Enter:</p>
 
     <form id="form">
       
@@ -39,23 +57,23 @@
      
     </form>
       <br>
-    <button onclick="buildTable()">devCodeCamp's Most Wanted</button>
-      <table>
-          <thead>
-              <th>First Name</th> 
-              <th>Last Name</th>
-              <th>Gender</th>
-              <th>Date of Birth</th> 
-              <th>Height</th>
-              <th>Weight</th>
-              <th>Eye Color</th>
-              <th>Occupation</th>
-          </thead>
-      <tbody id= "people"> 
+    <table id="result">
+      <thead>
+          <th>First Name</th> 
+          <th>Last Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th> 
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Eye Color</th>
+          <th>Occupation</th>
+      </thead>
+  <tbody id= "results"> 
 
-      </tbody>
+  </tbody>
 
-      </table>
+  </table>
+
 
 
       <br>
