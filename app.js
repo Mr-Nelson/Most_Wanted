@@ -303,29 +303,6 @@ function searchForDescendants(person, object){
 //          return finalSearchOutput;
 //  }
 
-// function searchByChildren(person) {
-//     //"The do...while statement creates a loop that executes a 
-//         //specified statement until the test condition evaluates to 
-//         //false. The condition is evaluated after executing the 
-//         //statement, resulting in the specified statement executing at least once."
-//         let filteredChildren = [];
-//         let i = 0;
-//     do {
-//         people.filter(function (person) {
-//             if(person.parents[i] === person.id) {
-//                 filteredChildren.push(person);
-//                     return true;
-//                 }
-//                 return false;
-//         });
-//         i += 1;
-//     } while(i < 2);
-//     if(filteredChildren.length > 0) {
-//         return filteredChildren;
-//         }else{
-//             alert("No Known Descendent in this Database.");
-//         }
-// }
 
 // function searchByParents(person) {
 //     let i = 0;
