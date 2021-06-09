@@ -220,7 +220,7 @@ function searchForDescendants(person, object){
         alert ("This individual has no descendants.")
     }
     filteredPeople.map(function(el) {
-        document.getElementById("familyTree").innerHTML += `<tr>
+        document.getElementById("familyTable").innerHTML += `<tr>
         <td>${el.firstName}</td>
         <td>${el.lastName}</td>
         </tr>`
