@@ -232,9 +232,11 @@ function searchBySpouse(person) {
     }
  }
 
+
  function callFamilyTree (){
    
-    let familyTree;
+    let familyTree = selectedPerson;
+
     if(selectedPerson == 1){
         familyTree = searchForDescendants()
     }
@@ -248,16 +250,14 @@ function searchBySpouse(person) {
         familyTree = searchBySiblings()
     }
 
-    familyTree.map(function(el) {
-        document.getElementById("familyTable").innerHTML += `<tr>
-        <td>${el.firstName}</td>
-        <td>${el.lastName}</td>
-        <tr>`
-    })
-    if(results.length == 1){
-        selectedPerson = results[0]
-    }        
-    if (results.length == 0) {
+    // familyTree.map(function(el) {
+    //     document.getElementById("familyTable").innerHTML += `<tr>
+    //     <td>${el.firstName}</td>
+    //     <td>${el.lastName}</td>
+    //     <tr>`
+    // })
+   
+    if (selectedPerson.length == 0) {
         alert ("Sorry, this is not in devCodeCamp's Most Wanted.")
     }
 }
