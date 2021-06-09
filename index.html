@@ -54,7 +54,8 @@
         <button type="button" onclick="filterPeople()">Search Results</button>
 
     </form>
-         
+     
+    </form>
       <table id="results" width="100%">
         <thead>Your Search Results
           <th>First Name</th> 
@@ -70,19 +71,8 @@
         </tbody>
       </table>
       <button onclick="resetTable()">Reset Table</button>
-      <button onclick="searchForDescendants(selectedPerson, people)">Descendants List</button>
-      
-      <div>
-        <table id="family tree" width="100%">
-          <thead>Family Tree
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Relation</th>
-          </thead>
-          <tbody id=familyTree>
-          </tbody>
-        </table>
-      </div>
+      <button onclick="searchForDescendants()">Descendants List</button>
+    </form>
     <br>
     <script src="data.js"></script>
     <script src="app.js"></script>
