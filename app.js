@@ -59,27 +59,6 @@ function resetTable() {
   })
 }  
 
-// let results = people;
-// results = searchByEyeColor('blue', results)
-// results = searchByGender('male', results)
-// console.log(results)
-
-
-
-// function searchByGender(gender, peopleToSearch){
-//     let filteredPeople = peopleToSearch.filter(function(person){
-//         if(banana.gender == gender){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//     })
-//     return filteredPeople
-// }
-
-
-
 function filterPeople (){
     let userFormInputs = [  //[Joy,"","","","","","",""]
     document.forms["form"]["fname"].value,
@@ -237,8 +216,11 @@ function searchForDescendants(person, object){
             return false;
         }
     })
+    if(filteredPeople == 0){
+        alert ("This individual has no descendants.")
+    }
     filteredPeople.map(function(el) {
-        document.getElementById("results").innerHTML += `<tr>
+        document.getElementById("familyTree").innerHTML += `<tr>
         <td>${el.firstName}</td>
         <td>${el.lastName}</td>
         </tr>`
