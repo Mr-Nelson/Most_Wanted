@@ -40,7 +40,7 @@
 
 function buildTable(){
     people.map(function(el) {
-        document.getElementById("people").innerHTML += `<tr>
+        document.getElementById("master").innerHTML += `<tr>
         <td>${el.firstName}</td>
         <td>${el.lastName}</td>
         <td>${el.gender}</td>
@@ -49,11 +49,15 @@ function buildTable(){
         <td>${el.weight}</td>
         <td>${el.eyeColor}</td>
         <td>${el.occupation}</td>
-        <td>${el.parents}</td>
-        <td>${el.currentSpouse}</td>
         </tr>`
     })
 }
+
+function resetTable() {
+    people.map(function(el){
+        document.getElementById("results").innerHTML = "";
+  })
+}  
 
 // let results = people;
 // results = searchByEyeColor('blue', results)
@@ -115,7 +119,7 @@ function filterPeople (){
         results = searchByOccupation(userFormInputs[7], results)
     }
     results.map(function(el) {
-        document.getElementById("people").innerHTML += `<tr>
+        document.getElementById("results").innerHTML += `<tr>
         <td>${el.firstName}</td>
         <td>${el.lastName}</td>
         <td>${el.gender}</td>
@@ -217,17 +221,17 @@ function searchByOccupation(occupation, results){
     })
     return filteredPeople
 }
-function searchById( Id, results){
-    let filteredPeople = results.filter(function(person){
-        if(person.occupation == occupation){
-            return true;
-        }
-        else{
-            return false;
-        }
-    })
-    return filteredPeople
-}
+// function searchById( Id, results){
+//     let filteredPeople = results.filter(function(person){
+//         if(person.occupation == occupation){
+//             return true;
+//         }
+//         else{
+//             return false;
+//         }
+//     })
+//     return filteredPeople
+// }
 
 // function intersect(array1, array2){
 //     if (array2 === undefined  || array2.length === 0) {
@@ -244,102 +248,107 @@ function searchById( Id, results){
         
 //     }
 // }
- function finalSearch(){
-     let finalSearchOutput = people;
 
-     let finalSearchByFirstName = searchByFirstName();
-            results = intersect(results, finalSearchByFirstName);
 
-     let finalSearchByLastName = searchByLastName();
-            results = intersect(results, finalSearchByLastName);
-     let finalSearchByGender = searchByGender();
-            results = intersect(results, finalSearchByGender);
-     let finalSearchByDOB = searchByDOB();
-            results = intersect(results,finalSearchByDOB);
-     let finalSearchByHeight = searchByHeight();
-            results = intersect(results, finalSearchByHeight);
-     let finalSearchByWeight = searchByWeight();
-            results = intersect(results, finalSearchByWeight);
-     let finalSearchByOccupation = searchByOccupation();
-            results = intersect(results, finalSearchByOccupation);
 
-         return finalSearchOutput;
- }
 
-function searchByChildren(person) {
-    //"The do...while statement creates a loop that executes a 
-        //specified statement until the test condition evaluates to 
-        //false. The condition is evaluated after executing the 
-        //statement, resulting in the specified statement executing at least once."
-        let filteredChildren = [];
-        let i = 0;
-    do {
-        people.filter(function (person) {
-            if(person.parents[i] === person.id) {
-                filteredChildren.push(person);
-                    return true;
-                }
-                return false;
-        });
-        i += 1;
-    } while(i < 2);
-    if(filteredChildren.length > 0) {
-        return filteredChildren;
-        }else{
-            alert("No Known Descendent in this Database.");
-        }
-}
 
-function searchByParents(person) {
-    let i = 0;
-    let filterParents = [];
-    do {    
-        people.filter(function (person) {
-            if(person.id == person[i]) {
-            filterParents.push(person);
-                return true;
-            }
-            return false;
-        });
-        i += 1;
-    } while(i < person.length); 
-    if(filterParents.length > 0) {
-        return filterParents;
-    }else{
-        alert("Person is not known to have Parent in this Database.")
-    }
-}
+//  function finalSearch(){
+//      let finalSearchOutput = people;
 
-function searchBySibling(person) {
-    let filterSibling = people.filter(function (people) {
-        if(person.parents === person.parents && person.id !=person.id) {
-            return true;
-        }
-        return false;
-    });
-    if(filterSibling.length > 0) {
-        return filterSibling;
-    }else{
-        alert("Person has no known Sibling in this this Database.");
-        return;
+//      let finalSearchByFirstName = searchByFirstName();
+//             results = intersect(results, finalSearchByFirstName);
+
+//      let finalSearchByLastName = searchByLastName();
+//             results = intersect(results, finalSearchByLastName);
+//      let finalSearchByGender = searchByGender();
+//             results = intersect(results, finalSearchByGender);
+//      let finalSearchByDOB = searchByDOB();
+//             results = intersect(results,finalSearchByDOB);
+//      let finalSearchByHeight = searchByHeight();
+//             results = intersect(results, finalSearchByHeight);
+//      let finalSearchByWeight = searchByWeight();
+//             results = intersect(results, finalSearchByWeight);
+//      let finalSearchByOccupation = searchByOccupation();
+//             results = intersect(results, finalSearchByOccupation);
+
+//          return finalSearchOutput;
+//  }
+
+// function searchByChildren(person) {
+//     //"The do...while statement creates a loop that executes a 
+//         //specified statement until the test condition evaluates to 
+//         //false. The condition is evaluated after executing the 
+//         //statement, resulting in the specified statement executing at least once."
+//         let filteredChildren = [];
+//         let i = 0;
+//     do {
+//         people.filter(function (person) {
+//             if(person.parents[i] === person.id) {
+//                 filteredChildren.push(person);
+//                     return true;
+//                 }
+//                 return false;
+//         });
+//         i += 1;
+//     } while(i < 2);
+//     if(filteredChildren.length > 0) {
+//         return filteredChildren;
+//         }else{
+//             alert("No Known Descendent in this Database.");
+//         }
+// }
+
+// function searchByParents(person) {
+//     let i = 0;
+//     let filterParents = [];
+//     do {    
+//         people.filter(function (person) {
+//             if(person.id == person[i]) {
+//             filterParents.push(person);
+//                 return true;
+//             }
+//             return false;
+//         });
+//         i += 1;
+//     } while(i < person.length); 
+//     if(filterParents.length > 0) {
+//         return filterParents;
+//     }else{
+//         alert("Person is not known to have Parent in this Database.")
+//     }
+// }
+
+// function searchBySibling(person) {
+//     let filterSibling = people.filter(function (people) {
+//         if(person.parents === person.parents && person.id !=person.id) {
+//             return true;
+//         }
+//         return false;
+//     });
+//     if(filterSibling.length > 0) {
+//         return filterSibling;
+//     }else{
+//         alert("Person has no known Sibling in this this Database.");
+//         return;
         
-    }
-}
+//     }
+// }
 
-function searchBySpouse(person) {
-    let filterSpouse = people.filter(function (person) {
-        if(person.currentSpouse ==(person.id){
-            return true;
-        }
-        return false;
-    });
-    if(filterSpouse.length > 0){
-        return filterSpouse
-    }else{
-        alert("Person has no known Spouse in this Database.");
-        return;
-    }
-}
+// function searchBySpouse(person) {
+//     let filterSpouse = people.filter(function (person) {
+//         if(person.currentSpouse ==(person.id){
+//             return true;
+//         }
+//         return false;
+//     });
+//     if(filterSpouse.length > 0){
+//         return filterSpouse
+//     }else{
+//         alert("Person has no known Spouse in this Database.");
+//         return;
+//     }
+// }
 
 
 
