@@ -209,7 +209,7 @@ function searchBySiblings(person) {
         return false;
     });
     if(filteredSiblings.length > 0) {
-        familyTree +=filteredSiblings;
+        return filteredSiblings;
     }else{
         alert("Person has no known Sibling in this this Database.");
         return;
@@ -225,7 +225,7 @@ function searchBySpouse(person) {
         return false;
     });
     if(filterSpouse.length > 0){
-        familyTree += filterSpouse
+        return filterSpouse
     }else{
         alert("Person has no known Spouse in this Database.");
         return;
@@ -238,24 +238,24 @@ function searchBySpouse(person) {
     let familyTree = selectedPerson;
 
     if(selectedPerson == 1){
-        familyTree = searchForDescendants()
+        familyTree += searchForDescendants()
     }
     if(selectedPerson == 1){
-        familyTree = searchByParents()
+        familyTree += searchByParents()
     }
     if(selectedPerson == 1){
-        familyTree = searchBySpouse()
+        familyTree += searchBySpouse()
     }
     if(selectedPerson == 1){
-        familyTree = searchBySiblings()
+        familyTree += searchBySiblings()
     }
 
-    // familyTree.map(function(el) {
-    //     document.getElementById("familyTable").innerHTML += `<tr>
-    //     <td>${el.firstName}</td>
-    //     <td>${el.lastName}</td>
-    //     <tr>`
-    // })
+    familyTree.map(function(el) {
+        document.getElementById("familyTable").innerHTML += `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <tr>`
+    })
    
     if (selectedPerson.length == 0) {
         alert ("Sorry, this is not in devCodeCamp's Most Wanted.")
