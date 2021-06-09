@@ -93,7 +93,6 @@ function filterPeople (){
 ]
     let results = people;
 
-
     if(userFormInputs[0] != ""){
         results = searchByFirstName(userFormInputs[0], results)
     }
@@ -129,8 +128,13 @@ function filterPeople (){
         <td>${el.eyeColor}</td>
         <td>${el.occupation}</td>
         </tr>`
-    })        
-
+    })
+    if(results.length == 1){
+        selectedPerson = results[0]
+    }        
+    if (results.length == 0) {
+        alert ("Sorry, this is not in devCodeCamp's Most Wanted.")
+    }
 }
 
 function searchByFirstName(firstName, results){
@@ -221,6 +225,30 @@ function searchByOccupation(occupation, results){
     })
     return filteredPeople
 }
+
+let selectedPerson;
+
+function searchForDescendants(person, object){
+    let filteredPeople = people.filter(function(person){
+        if(person.parents[0] === selectedPerson["id"] || person.parents[1] === selectedPerson["id"]){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    filteredPeople.map(function(el) {
+        document.getElementById("results").innerHTML += `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        </tr>`
+})        
+}
+    
+
+
+
+
 // function searchById( Id, results){
 //     let filteredPeople = results.filter(function(person){
 //         if(person.occupation == occupation){
