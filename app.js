@@ -199,7 +199,68 @@ function searchForDescendants(person, object){
         </tr>`
 })        
 }
-    
+ 
+
+function searchBySiblings(person) {
+    let filteredSiblings = people.filter(function (people) {
+        if(person.parents === person.parents && person.id !=person.id) {
+            return true;
+        }
+        return false;
+    });
+    if(filteredSiblings.length > 0) {
+        familyTree +=filteredSiblings;
+    }else{
+        alert("Person has no known Sibling in this this Database.");
+        return;
+        
+    }
+}
+
+function searchBySpouse(person) {
+    let filterSpouse = people.filter(function (person) {
+        if(person.currentSpouse ==(person.id)){
+            return true;
+        }
+        return false;
+    });
+    if(filterSpouse.length > 0){
+        familyTree += filterSpouse
+    }else{
+        alert("Person has no known Spouse in this Database.");
+        return;
+    }
+ }
+
+ function callFamilyTree (){
+   
+    let familyTree;
+    if(selectedPerson == 1){
+        familyTree = searchForDescendants()
+    }
+    if(selectedPerson == 1){
+        familyTree = searchByParents()
+    }
+    if(selectedPerson == 1){
+        familyTree = searchBySpouse()
+    }
+    if(selectedPerson == 1){
+        familyTree = searchBySiblings()
+    }
+
+    familyTree.map(function(el) {
+        document.getElementById("familyTable").innerHTML += `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <tr>`
+    })
+    if(results.length == 1){
+        selectedPerson = results[0]
+    }        
+    if (results.length == 0) {
+        alert ("Sorry, this is not in devCodeCamp's Most Wanted.")
+    }
+}
 
 
 
