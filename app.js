@@ -1,18 +1,4 @@
 'use strict';
-// function correctUserInput(string){
-//     let correctedInput =[];
-//         for (let i = 0; i < string.length; i++){
-//             if (i != 0){
-//                 string[i].toString();
-//                 correctedInput += string[i].toLowerCase();
-//             }
-//             else if(i == 0){
-//                 string[i].toString();
-//                 correctedInput += string[i].toUpperCase();
-//             }
-//         }
-//     return correctedInput;
-// }
 
 function buildTable(){
     people.map(function(el) {
@@ -192,12 +178,38 @@ function searchForDescendants(person, object){
             return false;
         }
     })
+    filteredPeople.map(function(el) {
+        document.getElementById("familyTable").innerHTML += `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <tr>`
+})
+}
+function searchForChildren(person, object){
+    let filteredPeople = people.filter(function(person){
+        if(person.parents[0] == selectedPerson["id"] || person.parents[1] == selectedPerson["id"]){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
     return filteredPeople;
 }
- 
+function searchForSpouse(person, object){
+    let filteredPeople = people.filter(function(person){
+        if(person.id == selectedPerson.currentSpouse){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople;     
+}
 function searchForParents(person, object){
     let filteredPeople = people.filter(function(person){
-        if(person.id === selectedPerson.parents[0] || person.id === selectedPerson.parents[1]){
+        if(person.id == selectedPerson.parents[0] || person.id == selectedPerson.parents[1]){
             return true;
         }
         else{
@@ -208,8 +220,8 @@ function searchForParents(person, object){
 }
 function searchForSiblings(person, object){
     let filteredPeople = people.filter(function(person){
-        if(person.id === selectedPerson.parents[0] || person.id === selectedPerson.parents[1] &&
-            people.parents[0] === person.id || people.parents[1] === person.id){
+        if(person.id == selectedPerson.parents[0] || person.id == selectedPerson.parents[1] &&
+            people.parents == person.id || people.parents == person.id){
             return true;
         }
         else{
@@ -218,16 +230,40 @@ function searchForSiblings(person, object){
     })
     return filteredPeople;       
 }
-function searchForSpouse(person, object){
-    let filteredPeople = people.filter(function(person){
-        if(person.id === selectedPerson.currentSpouse){
-            return true;
-        }
-        else{
-            return false;
-        }
+
+function callFamilyTree (selectedPerson, people){
+    
+    let startingList = people;
+
+    let familyTree = [];
+
+    if(selectedPerson != ""){
+        let resultFromSearchForChildren = searchForChildren(selectedPerson, startingList);
+        familyTree.concat(resultFromSearchForChildren);
+    }
+    if(selectedPerson != ""){
+        let resultFromSearchForSpouse = searchForSpouse(selectedPerson, startingList);
+        familyTree.concat(resultFromSearchForSpouse);
+    }
+    if(selectedPerson != ""){
+        let resultFromSearchForParents = searchForParents(selectedPerson, startingList);
+        familyTree.concat(resultFromSearchForParents);
+    }
+    if(selectedPerson != ""){
+        let resultFromSearchForSiblings = searchForSiblings(selectedPerson, startingList);
+        familyTree.concat(resultFromSearchForSiblings);
+    }
+
+    familyTree.map(function(el) {
+        document.getElementById("familyTable").innerHTML += `<tr>
+        <td>${el.firstName}</td>
+        <td>${el.lastName}</td>
+        <tr>`
     })
-    return filteredPeople;     
+   
+    if (familyTree.length == 0) {
+        alert ("Sorry, this individual does not have family.")
+    }
 }
 
 // function searchBySiblings(person) {
@@ -262,35 +298,6 @@ function searchForSpouse(person, object){
 //         return;
 //     }
 // }
-
-
-function callFamilyTree (){
-
-    let familyTree = people
-
-    if(selectedPerson != "")
-        familyTree = searchForDescendants(selectedPerson, people)
-    }
-    if(selectedPerson != ""){
-        familyTree = searchForParents(selectedPerson, people)
-    }
-    if(selectedPerson != ""){
-        familyTree = searchForSpouse(selectedPerson, people)
-    }
-    if(selectedPerson != ""){
-        familyTree = searchForSiblings(selectedPerson, people)
-    }
-
-    familyTree.map(function(el) {
-        document.getElementById("familyTable").innerHTML += `<tr>
-        <td>${el.firstName}</td>
-        <td>${el.lastName}</td>
-        <tr>`
-    })
-   
-    if (familyTree.length == 0) {
-        alert ("Sorry, this individual does not have family.")
-    }
 
 
 
