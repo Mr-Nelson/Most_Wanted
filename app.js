@@ -192,62 +192,93 @@ function searchForDescendants(person, object){
             return false;
         }
     })
-    filteredPeople.map(function(el) {
-        document.getElementById("familyTable").innerHTML += `<tr>
-        <td>${el.firstName}</td>
-        <td>${el.lastName}</td>
-        </tr>`
-})        
+    return filteredPeople;
 }
  
-
-function searchBySiblings(person) {
-    let filteredSiblings = people.filter(function (people) {
-        if(person.parents === person.parents && person.id !=person.id) {
+function searchForParents(person, object){
+    let filteredPeople = people.filter(function(person){
+        if(person.id === selectedPerson.parents[0] || person.id === selectedPerson.parents[1]){
             return true;
         }
-        return false;
-    });
-    if(filteredSiblings.length > 0) {
-        return filteredSiblings;
-    }else{
-        alert("Person has no known Sibling in this this Database.");
-        return;
-        
-    }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople;
+}
+function searchForSiblings(person, object){
+    let filteredPeople = people.filter(function(person){
+        if(person.id === selectedPerson.parents[0] || person.id === selectedPerson.parents[1] &&
+            people.parents[0] === person.id || people.parents[1] === person.id){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople;       
+}
+function searchForSpouse(person, object){
+    let filteredPeople = people.filter(function(person){
+        if(person.id === selectedPerson.currentSpouse){
+            return true;
+        }
+        else{
+            return false;
+        }
+    })
+    return filteredPeople;     
 }
 
-function searchBySpouse(person) {
-    let filterSpouse = people.filter(function (person) {
-        if(person.currentSpouse ==(person.id)){
-            return true;
-        }
-        return false;
-    });
-    if(filterSpouse.length > 0){
-        return filterSpouse
-    }else{
-        alert("Person has no known Spouse in this Database.");
-        return;
-    }
- }
+// function searchBySiblings(person) {
+//     let filteredSiblings = people.filter(function (people) {
+//         if(person.parents === person.parents && person.id !=person.id) {
+//             return true;
+//         }
+//         return false;
+//     });
+//     if(filteredSiblings.length > 0) {
+//         return filteredSiblings;
+//     }
+//     else{
+//         alert("Person has no known Sibling in this this Database.");
+//         return;
+        
+//     }
+// }
+
+// function searchBySpouse(person) {
+//     let filterSpouse = people.filter(function (person) {
+//         if(person.currentSpouse ==(person.id)){
+//             return true;
+//         }
+//         return false;
+//     });
+//     if(filterSpouse.length > 0){
+//         return filterSpouse
+//     }
+//     else{
+//         alert("Person has no known Spouse in this Database.");
+//         return;
+//     }
+// }
 
 
- function callFamilyTree (){
-   
-    let familyTree = selectedPerson;
+function callFamilyTree (){
 
-    if(selectedPerson == 1){
-        familyTree += searchForDescendants()
+    let familyTree = people
+
+    if(selectedPerson != "")
+        familyTree = searchForDescendants(selectedPerson, people)
     }
-    if(selectedPerson == 1){
-        familyTree += searchByParents()
+    if(selectedPerson != ""){
+        familyTree = searchForParents(selectedPerson, people)
     }
-    if(selectedPerson == 1){
-        familyTree += searchBySpouse()
+    if(selectedPerson != ""){
+        familyTree = searchForSpouse(selectedPerson, people)
     }
-    if(selectedPerson == 1){
-        familyTree += searchBySiblings()
+    if(selectedPerson != ""){
+        familyTree = searchForSiblings(selectedPerson, people)
     }
 
     familyTree.map(function(el) {
@@ -257,10 +288,9 @@ function searchBySpouse(person) {
         <tr>`
     })
    
-    if (selectedPerson.length == 0) {
-        alert ("Sorry, this is not in devCodeCamp's Most Wanted.")
+    if (familyTree.length == 0) {
+        alert ("Sorry, this individual does not have family.")
     }
-}
 
 
 
